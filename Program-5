@@ -1,0 +1,51 @@
+/*
+Q5.
+ans
+if x is some no. and y=0 
+then output=
+Attempted to divide by zero!
+
+if x is some no. and y is some no
+X/Y=reminder
+as if x=10 and y=5
+then output=
+x/y=2
+
+if x=0 and y is some no 
+then output
+x/y=0
+
+*/
+
+#include <iostream>  
+#include <exception>  
+using namespace std;  
+class MyException : public exception{  
+    public:  
+        const char * what() const throw()  
+        {  
+            return "Attempted to divide by zero!\n";  
+        }  
+};  
+int main()  
+{  
+    try  
+    {  
+        int x, y;  
+        cout << "Enter the two numbers : \n";  
+        cin >> x >> y;  
+        if (y == 0)  
+        {  
+            MyException z;  
+            throw z;  
+        }  
+        else  
+        {  
+            cout << "x / y = " << x/y << endl;  
+        }  
+    }  
+    catch(exception& e)  
+    {  
+        cout << e.what();  
+    }  
+}  
