@@ -1,5 +1,6 @@
 /*
-In terms of custom design the any trow condition can be used to give out thorough catch block built customlly by the user itself. 
+1. Can you provide an example of a custom exception class in C++?
+Ans.In terms of custom design the any trow condition can be used to give out thorough catch block built customlly by the user itself. 
 Under certain conditions, custom exceptions that are not predefined in C++ may be useful to generate. 
 In C++, any type can be caught or thrown that matches some requirements. 
 These are that the type should have a valid copy constructor and destructor.
