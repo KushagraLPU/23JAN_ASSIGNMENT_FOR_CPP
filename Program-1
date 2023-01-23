@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    try {
+        throw "My Custom Exception Kushagra";
+    } catch (const char* ch) {
+        cout << "Caught " <<ch << endl;
+    }
+}
