@@ -1,0 +1,41 @@
+/*
+4.How do you re-throw an exception in C++? WITH EXAMPLE
+Ans.If a catch block cannot handle the particular exception it has caught, you can rethrow the exception.
+The rethrow expression (throw without assignment_expression) causes the originally thrown object to be rethrown.
+Because the exception has already been caught at the scope in which the rethrow expression occurs, 
+it is rethrown out to the next dynamically enclosing try block. 
+Therefore, it cannot be handled by catch blocks at the scope in which the rethrow expression occurred.
+Any catch blocks for the dynamically enclosing try block have an opportunity to catch the exception.
+The following example demonstrates rethrowing an exception
+*/
+#include <iostream>
+using namespace std;
+int main()
+{
+	try
+	{
+		int a, b;
+		cout<<"Enter two integer values: ";
+		cin>>a>>b;
+		try
+		{
+			if(b == 0)
+			{
+				throw b;
+			}
+			else
+			{
+				cout<<(a/b);
+			}
+		}
+		catch(...)
+		{
+			throw; //rethrowing the exception
+		}
+	}
+	catch(int)
+	{
+		cout<<"Second value cannot be zero";
+	}
+	return 0;
+}
